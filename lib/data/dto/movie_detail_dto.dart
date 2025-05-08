@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final movieDetailDto = movieDetailDtoFromJson(jsonString);
-
 import 'dart:convert';
 
 MovieDetailDto movieDetailDtoFromJson(String str) => MovieDetailDto.fromJson(json.decode(str));
@@ -13,7 +9,7 @@ class MovieDetailDto {
   final String backdropPath;
   final dynamic belongsToCollection;
   final int budget;
-  final List<Genre> genres;
+  final List<String> genres;
   final String homepage;
   final int id;
   final String imdbId;
@@ -70,7 +66,7 @@ class MovieDetailDto {
     backdropPath: json["backdrop_path"],
     belongsToCollection: json["belongs_to_collection"],
     budget: json["budget"],
-    genres: List<Genre>.from(json["genres"].map((x) => Genre.fromJson(x))),
+    genres: List<String>.from(json["genres"].map((x) => x)),
     homepage: json["homepage"],
     id: json["id"],
     imdbId: json["imdb_id"],
@@ -99,7 +95,7 @@ class MovieDetailDto {
     "backdrop_path": backdropPath,
     "belongs_to_collection": belongsToCollection,
     "budget": budget,
-    "genres": List<dynamic>.from(genres.map((x) => x.toJson())),
+    "genres": List<dynamic>.from(genres.map((x) => x)),
     "homepage": homepage,
     "id": id,
     "imdb_id": imdbId,
