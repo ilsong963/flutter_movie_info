@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter_movie_info/data/dto/movie_detail_dto.dart';
-import 'package:flutter_movie_info/data/dto/movie_response_dto.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -83,10 +82,10 @@ void main() {
   ''';
     final movie = MovieDetailDto.fromJson(jsonDecode(jsonString));
 
-    expect(movie.id, equals("1233069"));
+    expect(movie.id, equals(1233069));
     expect(movie.title, equals("Exterritorial"));
     expect(movie.status, equals("Released"));
-    expect(movie.releaseDate, equals("2025-04-29"));
+    expect(movie.releaseDate, equals(DateTime.parse("2025-04-29")));
     expect(movie.spokenLanguages.first.englishName, equals("German"));
     expect(movie.spokenLanguages.first.iso6391, equals("de"));
     expect(movie.spokenLanguages.first.name, equals("Deutsch"));

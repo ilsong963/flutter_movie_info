@@ -36,8 +36,8 @@ void main() {
   ''';
     final movie = MovieResponseDto.fromJson(jsonDecode(jsonString));
 
-    expect(movie.dates.maximum, equals("2025-05-14"));
-    expect(movie.dates.minimum, equals("2025-04-02"));
+    expect(movie.dates.maximum, equals(DateTime.parse("2025-05-14")));
+    expect(movie.dates.minimum, equals(DateTime.parse("2025-04-02")));
     expect(movie.page, equals(1));
     expect(movie.totalPages, equals(256));
     expect(movie.totalResults, equals(5108));
