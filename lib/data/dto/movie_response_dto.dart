@@ -5,7 +5,7 @@ MovieResponseDto movieResponseDtoFromJson(String str) => MovieResponseDto.fromJs
 String movieResponseDtoToJson(MovieResponseDto data) => json.encode(data.toJson());
 
 class MovieResponseDto {
-  final Dates dates;
+  final Dates? dates;
   final int page;
   final List<Result> results;
   final int totalPages;
@@ -14,7 +14,7 @@ class MovieResponseDto {
   MovieResponseDto({required this.dates, required this.page, required this.results, required this.totalPages, required this.totalResults});
 
   factory MovieResponseDto.fromJson(Map<String, dynamic> json) => MovieResponseDto(
-    dates: Dates.fromJson(json["dates"]),
+    dates: json["dates"] != null ? Dates.fromJson(json["dates"]) : null,
     page: json["page"],
     results: List<Result>.from(json["results"].map((x) => Result.fromJson(x))),
     totalPages: json["total_pages"],
@@ -22,7 +22,7 @@ class MovieResponseDto {
   );
 
   Map<String, dynamic> toJson() => {
-    "dates": dates.toJson(),
+    if (dates != null) "dates": dates!.toJson(),
     "page": page,
     "results": List<dynamic>.from(results.map((x) => x.toJson())),
     "total_pages": totalPages,
@@ -97,7 +97,7 @@ class Result {
   Map<String, dynamic> toJson() => {
     "adult": adult,
     "backdrop_path": backdropPath,
-    "genre_ids": List<dynamic>.from(genreIds.map((x) => x)),
+    "genre_ids": List<int>.from(genreIds.map((x) => x)),
     "id": id,
     "original_language": originalLanguage,
     "original_title": originalTitle,

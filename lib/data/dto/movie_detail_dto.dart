@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 MovieDetailDto movieDetailDtoFromJson(String str) => MovieDetailDto.fromJson(json.decode(str));
 
@@ -66,7 +67,7 @@ class MovieDetailDto {
     backdropPath: json["backdrop_path"],
     belongsToCollection: json["belongs_to_collection"],
     budget: json["budget"],
-    genres: List<String>.from(json["genres"].map((x) => x)),
+    genres: List<String>.from(json["genres"].map((x) => x['name'])),
     homepage: json["homepage"],
     id: json["id"],
     imdbId: json["imdb_id"],
@@ -121,20 +122,9 @@ class MovieDetailDto {
   };
 }
 
-class Genre {
-  final int id;
-  final String name;
-
-  Genre({required this.id, required this.name});
-
-  factory Genre.fromJson(Map<String, dynamic> json) => Genre(id: json["id"], name: json["name"]);
-
-  Map<String, dynamic> toJson() => {"id": id, "name": name};
-}
-
 class ProductionCompany {
   final int id;
-  final String logoPath;
+  final String? logoPath;
   final String name;
   final String originCountry;
 
