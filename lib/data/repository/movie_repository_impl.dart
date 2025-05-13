@@ -23,7 +23,7 @@ class MovieRepositoryImpl implements MovieRepository {
       releaseDate: result.releaseDate,
       voteAverage: result.voteAverage,
       genres: result.genres,
-      productionCompanyLogos: result.productionCompanies.map((company) => company.logoPath).toList(),
+      productionCompanyLogos: result.productionCompanies.map((company) => company.logoPath).whereType<String>().toList(),
       popularity: result.popularity,
       revenue: result.revenue,
       runtime: result.runtime,
