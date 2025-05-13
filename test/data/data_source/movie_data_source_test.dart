@@ -22,7 +22,7 @@ void main() {
   });
 
   test('MovieDataSourceImpl: fetchNowPlayingMovies', () async {
-    final jsonString = await rootBundle.loadString('test/data/data_source/data_json/fetchNowPlayingMovies_test_data.json');
+    final jsonString = await rootBundle.loadString('test/test_data/movie_response_dates_test_data.json');
     final jsonMap = json.decode(jsonString);
     when(() => dio.get(any())).thenAnswer((_) async => Response(data: jsonMap, requestOptions: RequestOptions(path: '')));
 
@@ -31,17 +31,17 @@ void main() {
   });
 
   test('MovieDataSourceImpl: fetchPopularMovies', () async {
-    final jsonString = await rootBundle.loadString('test/data/data_source/data_json/fetchPopularMovies_test_data.json');
+    final jsonString = await rootBundle.loadString('test/test_data/movie_response_test_data.json');
     final jsonMap = json.decode(jsonString);
 
     when(() => dio.get(any())).thenAnswer((_) async => Response(data: jsonMap, requestOptions: RequestOptions(path: '')));
 
     final result = await movieDataSourceImpl.fetchPopularMovies();
-    expect(result!.results.first.id, 1241436);
+    expect(result!.results.first.id, 278);
   });
 
   test('MovieDataSourceImpl: fetchTopRatedMovies', () async {
-    final jsonString = await rootBundle.loadString('test/data/data_source/data_json/fetchTopRatedMovies_test_data.json');
+    final jsonString = await rootBundle.loadString('test/test_data/movie_response_test_data.json');
     final jsonMap = json.decode(jsonString);
     when(() => dio.get(any())).thenAnswer((_) async => Response(data: jsonMap, requestOptions: RequestOptions(path: '')));
 
@@ -49,7 +49,7 @@ void main() {
     expect(result!.results.first.id, 278);
   });
   test('MovieDataSourceImpl: fetchUpcomingMovies', () async {
-    final jsonString = await rootBundle.loadString('test/data/data_source/data_json/fetchUpcomingMovies_test_data.json');
+    final jsonString = await rootBundle.loadString('test/test_data/movie_response_dates_test_data.json');
     final jsonMap = json.decode(jsonString);
     when(() => dio.get(any())).thenAnswer((_) async => Response(data: jsonMap, requestOptions: RequestOptions(path: '')));
 
@@ -57,7 +57,7 @@ void main() {
     expect(result!.results.first.id, 977294);
   });
   test('MovieDataSourceImpl: fetchMovieDetail', () async {
-    final jsonString = await rootBundle.loadString('test/data/data_source/data_json/fetchMovieDetail_test_data.json');
+    final jsonString = await rootBundle.loadString('test/test_data/movie_detail_test_data.json');
     final jsonMap = json.decode(jsonString);
     when(() => dio.get(any())).thenAnswer((_) async => Response(data: jsonMap, requestOptions: RequestOptions(path: '')));
 

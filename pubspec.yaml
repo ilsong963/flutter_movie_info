@@ -63,8 +63,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - .env
-    - test/data/data_source/data_json/
-    - test/data/dto/data_json/
+    - test/test_data/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
