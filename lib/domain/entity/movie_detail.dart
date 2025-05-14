@@ -53,4 +53,42 @@ class MovieDetail {
     required this.voteAverage,
     required this.voteCount,
   });
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other.runtimeType != runtimeType) return false;
+    return other is MovieDetail &&
+        budget == other.budget &&
+        genres.length == other.genres.length &&
+        genres.every((element) => other.genres.contains(element)) &&
+        id == other.id &&
+        productionCompanyLogos.length == other.productionCompanyLogos.length &&
+        productionCompanyLogos.every((element) => other.productionCompanyLogos.contains(element)) &&
+        overview == other.overview &&
+        popularity == other.popularity &&
+        releaseDate == other.releaseDate &&
+        revenue == other.revenue &&
+        runtime == other.runtime &&
+        tagline == other.tagline &&
+        title == other.title &&
+        voteAverage == other.voteAverage &&
+        voteCount == other.voteCount;
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    budget,
+    Object.hashAll(genres),
+    id,
+    Object.hashAll(productionCompanyLogos),
+    overview,
+    popularity,
+    releaseDate,
+    revenue,
+    runtime,
+    tagline,
+    title,
+    voteAverage,
+    voteCount,
+  );
 }
