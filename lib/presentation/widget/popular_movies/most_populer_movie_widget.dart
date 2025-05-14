@@ -12,6 +12,6 @@ class MostPopulerMovieWidget extends ConsumerWidget {
     if (movies == null) {
       return const Center(child: CircularProgressIndicator());
     }
-    return PosterWidget(posterPath: movies[0].posterPath, id: movies[0].id);
+    return PosterWidget(tagId: "mostPopuler${movies[0].id}", posterPath: movies[0].posterPath, id: movies[0].id);
   }
 }

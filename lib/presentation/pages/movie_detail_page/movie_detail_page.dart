@@ -6,8 +6,9 @@ import 'package:flutter_movie_info/presentation/widget/common/poster_widget.dart
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MovieDetailPage extends ConsumerStatefulWidget {
-  const MovieDetailPage({super.key, required this.posterPath, required this.id});
+  const MovieDetailPage({super.key, required this.posterPath, required this.id, required this.tagId});
   final String posterPath;
+  final String tagId;
   final int id;
 
   @override
@@ -21,7 +22,7 @@ class _MovieDetailPageState extends ConsumerState<MovieDetailPage> {
       body: ListView(
         children: [
           Hero(
-            tag: widget.id,
+            tag: widget.tagId,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ClipRRect(

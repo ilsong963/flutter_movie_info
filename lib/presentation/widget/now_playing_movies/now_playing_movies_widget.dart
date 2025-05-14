@@ -18,7 +18,7 @@ class NowPlayingMoviesWidget extends ConsumerWidget {
       itemCount: movies.length,
       itemBuilder: (context, index) {
         final movie = movies[index];
-        return PosterWidget(posterPath: movie.posterPath, id: movie.id);
+        return PosterWidget(tagId: "nowPlaying${movie.id}", posterPath: movie.posterPath, id: movie.id);
       },
     );
   }

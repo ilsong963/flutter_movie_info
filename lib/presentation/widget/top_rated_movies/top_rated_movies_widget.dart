@@ -18,7 +18,7 @@ class TopRatedMoviesWidget extends ConsumerWidget {
       itemBuilder: (context, index) {
         final movie = movies[index];
 
-        return PosterWidget(posterPath: movie.posterPath, id: movie.id);
+        return PosterWidget(tagId: "topRated${movie.id}", posterPath: movie.posterPath, id: movie.id);
       },
     );
   }
