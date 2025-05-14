@@ -18,7 +18,7 @@ class PopularMoviesWidget extends ConsumerWidget {
       itemBuilder: (context, index) {
         final movie = movies[index];
 
-        return PosterWidget(posterPath: movie.posterPath);
+        return PosterWidget(posterPath: movie.posterPath, id: movie.id);
       },
     );
   }

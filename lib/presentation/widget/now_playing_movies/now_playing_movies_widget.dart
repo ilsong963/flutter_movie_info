@@ -12,12 +12,13 @@ class NowPlayingMoviesWidget extends ConsumerWidget {
     if (movies == null) {
       return const Center(child: CircularProgressIndicator());
     }
+
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: movies.length,
       itemBuilder: (context, index) {
         final movie = movies[index];
-        return PosterWidget(posterPath: movie.posterPath);
+        return PosterWidget(posterPath: movie.posterPath, id: movie.id);
       },
     );
   }
