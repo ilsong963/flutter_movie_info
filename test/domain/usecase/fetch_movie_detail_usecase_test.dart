@@ -16,7 +16,7 @@ void main() {
     fetchMovieDetailUsecase = FetchMovieDetailUseCase(mockMovieRepository);
   });
 
-  test('FetchMoviesUsecase test : fetchMovieDetail', () async {
+  test('test : fetchMovieDetail', () async {
     when(() => mockMovieRepository.fetchMovieDetail(123)).thenAnswer(
       (_) async => MovieDetail(
         budget: 4000000,
