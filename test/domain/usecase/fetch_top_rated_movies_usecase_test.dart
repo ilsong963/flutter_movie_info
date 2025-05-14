@@ -44,7 +44,7 @@ void main() {
     );
 
     final repositoryResult = await mockMovieRepository.fetchTopRatedMovies();
-    final useCaseResult = await fetchTopRatedMoviesUseCase.excute();
+    final useCaseResult = await fetchTopRatedMoviesUseCase.execute();
 
     expect(useCaseResult, equals(repositoryResult));
   });

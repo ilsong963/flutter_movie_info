@@ -6,7 +6,7 @@ class FetchNowPlayingMoviesUseCase {
 
   FetchNowPlayingMoviesUseCase(this.repository);
 
-  Future<List<Movie>?> excute() {
+  Future<List<Movie>?> execute() {
     return repository.fetchNowPlayingMovies();
   }
 }

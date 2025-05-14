@@ -6,7 +6,7 @@ class FetchUpcomingMoviesUseCase {
 
   FetchUpcomingMoviesUseCase(this.repository);
 
-  Future<List<Movie>?> excute() {
+  Future<List<Movie>?> execute() {
     return repository.fetchUpcomingMovies();
   }
 }
