@@ -12,27 +12,30 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color.fromARGB(255, 21, 20, 34),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TitleTextWidget(title: "가장 인기있는"),
-              MostPopulerMovieWidget(),
-              SizedBox(height: 16),
-              TitleTextWidget(title: "현재 상영중"),
-              SizedBox(height: 180, child: NowPlayingMoviesWidget()),
-              SizedBox(height: 16),
-              TitleTextWidget(title: "인기순"),
-              SizedBox(height: 180, child: PopularMoviesWidget()),
-              SizedBox(height: 16),
-              TitleTextWidget(title: "평점 높은순"),
-              SizedBox(height: 180, child: TopRatedMoviesWidget()),
-              SizedBox(height: 16),
-              TitleTextWidget(title: "개봉예정"),
-              SizedBox(height: 180, child: UpcomingMoviesWidget()),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TitleTextWidget(title: "가장 인기있는"),
+                MostPopulerMovieWidget(),
+                SizedBox(height: 16),
+                TitleTextWidget(title: "현재 상영중"),
+                SizedBox(height: 180, child: NowPlayingMoviesWidget()),
+                SizedBox(height: 16),
+                TitleTextWidget(title: "인기순"),
+                SizedBox(height: 180, child: PopularMoviesWidget()),
+                SizedBox(height: 16),
+                TitleTextWidget(title: "평점 높은순"),
+                SizedBox(height: 180, child: TopRatedMoviesWidget()),
+                SizedBox(height: 16),
+                TitleTextWidget(title: "개봉예정"),
+                SizedBox(height: 180, child: UpcomingMoviesWidget()),
+              ],
+            ),
           ),
         ),
       ),
