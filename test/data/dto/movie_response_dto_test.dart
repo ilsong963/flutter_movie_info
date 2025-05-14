@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_movie_info/data/dto/movie_response_dto.dart';

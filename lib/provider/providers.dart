@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+import 'package:flutter_movie_info/core/dio_client.dart';
 import 'package:flutter_movie_info/data/data_source/movie_data_source.dart';
 import 'package:flutter_movie_info/data/data_source/movie_data_source_impl.dart';
 import 'package:flutter_movie_info/data/repository/movie_repository_impl.dart';
@@ -11,7 +11,7 @@ import 'package:flutter_movie_info/domain/usecase/fetch_upcoming_movies_usecase.
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final _movieDataSourceProvider = Provider<MovieDataSource>((ref) {
-  final dio = Dio(); // Create an instance of Dio
+  final dio = DioClient.createDio(); // Create an instance of Dio
   return MovieDataSourceImpl(dio);
 });
 
