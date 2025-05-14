@@ -36,7 +36,7 @@ void main() {
     );
 
     final repositoryResult = await mockMovieRepository.fetchMovieDetail(123);
-    final useCaseResult = await fetchMovieDetailUsecase.excute(123);
+    final useCaseResult = await fetchMovieDetailUsecase.execute(123);
 
     expect(useCaseResult, equals(repositoryResult));
   });

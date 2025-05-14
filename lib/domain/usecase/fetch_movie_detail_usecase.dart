@@ -6,7 +6,7 @@ class FetchMovieDetailUseCase {
 
   FetchMovieDetailUseCase(this.repository);
 
-  Future<MovieDetail?> excute(int id) {
+  Future<MovieDetail?> execute(int id) {
     return repository.fetchMovieDetail(id);
   }
 }
