@@ -21,7 +21,7 @@ class PopularMoviesWidget extends ConsumerWidget {
         return Stack(
           children: [
             Padding(padding: EdgeInsets.only(left: 10), child: PosterWidget(tagId: "popular${movie.id}", posterPath: movie.posterPath, id: movie.id)),
-            Align(alignment: Alignment.bottomLeft, child: Text("$index", style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold))),
+            Align(alignment: Alignment.bottomLeft, child: Text("${index + 1}", style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold))),
           ],
         );
       },
